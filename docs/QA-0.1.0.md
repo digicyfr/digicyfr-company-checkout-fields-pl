@@ -1,10 +1,10 @@
-# Candidate QA — 0.1.0
+# Release QA — 0.1.0
 
-This record covers the self-hosted, GPL candidate ZIP only. It is not a WordPress.org submission, tax validation, invoice feature, or public release approval.
+This record covers the stable self-hosted GPL ZIP. It is not a WordPress.org submission, tax validation, or invoice feature.
 
 ## Exact artifact
 
-- ZIP: `dist/digicyfr-company-checkout-fields-pl-0.1.0.zip`, byte-identical to the public GitHub `v0.1.0` prerelease asset downloaded and verified with its `.sha256` sidecar on 2026-11-05.
+- ZIP: `dist/digicyfr-company-checkout-fields-pl-0.1.0.zip`, byte-identical to the public GitHub `v0.1.0` release asset downloaded and verified with its `.sha256` sidecar on 2026-11-05.
 - SHA-256: `33da10e89d0dc9d00a0c1a30236e1ccd45e91a8b57ba1a53facedc67c70e0379`
 - Standalone `tools/release.py build` and `verify` passed: all 12 allowlisted files match source bytes; no development docs or tests are bundled. Compared with the prior `d21c0418` candidate, only bundled `README.md` and `readme.txt` changed; runtime files are byte-identical.
 - PHP lint passed for all plugin and test PHP files. WordPress Coding Standards (`phpcs --standard=WordPress`) passed for runtime PHP.
@@ -72,3 +72,7 @@ Screenshots: [Block company receipt](evidence/0.1.0/block-company-receipt.png), 
 The exact public ZIP and SHA sidecar above were verified again and installed on a fresh disposable WordPress 7.1 / PHP 8.3.33 / WooCommerce 11.2.2 site with synthetic products and noncharging BACS. Chromium 156.0.8078.4 and axe-core 4.10.3 ran WCAG 2/2.1/2.2 A/AA rule tags on the merchant setting, settled Block and Classic checkouts, and both visible wrong-checksum NIP error states. Every tested state had **zero axe violations**. Both checkout modes were also run with this plugin deactivated as WooCommerce baselines; both baselines had zero violations. At 390px the settings and both checkouts had document width 390px. Chromium's accessibility tree exposed a named company checkbox and NIP textbox in both modes; Space toggled the checkbox and Tab moved to NIP. The settings checkbox and Save button were also named and sequentially reachable by Tab. See [machine-readable audit evidence](evidence/0.1.0/axe-2026-11-05.json).
 
 Classic checkout had one inconclusive contrast check on WooCommerce's native order-notes textarea with the plugin both active and inactive. An early Block loading-skeleton snapshot briefly raised an axe ARIA finding on WooCommerce's skeleton markup; it disappeared after the cart finished loading. These are not plugin-owned defects. The automated check did not require a change to the `v0.1.0` ZIP, tag, or release branch. A human screen-reader pass and merchant-configured checkout, payment and email acceptance remain open.
+
+## Stable self-hosted release decision — 2026-11-05
+
+The exact public ZIP passed the published SHA-256 sidecar check (`33da10e89d0dc9d00a0c1a30236e1ccd45e91a8b57ba1a53facedc67c70e0379`) and source-byte comparison. The protected `release/0.1.0` branch and annotated `v0.1.0` tag point to the same frozen release commit, and their CI passed. Main-branch CI and the exact-ZIP checkout and axe checks passed before promotion. This supports a stable self-hosted GitHub release. The ZIP, tag, release branch and attached assets were preserved. Human screen-reader testing, WooCommerce-native contrast resolution, and target merchant theme, payment, checkout and email acceptance remain unperformed; axe and browser checks do not establish WCAG conformance.

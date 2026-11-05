@@ -1,0 +1,72 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: pl_PL\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+
+msgid "Capture setting saved."
+msgstr "Ustawienie pobierania danych zostało zapisane."
+
+msgid "Collect company intent and an optional Polish NIP at classic and block checkout. The native WooCommerce company name field is unchanged. The NIP check covers format and check digit only; it does not confirm a business, issue invoices, or affect taxes."
+msgstr "Pobieraj oznaczenie zamówienia firmowego i opcjonalny polski NIP w klasycznej kasie i bloku zamówienia. Wbudowane pole nazwy firmy WooCommerce pozostaje bez zmian. Sprawdzenie NIP obejmuje tylko format i cyfrę kontrolną; nie potwierdza firmy, nie wystawia faktur i nie wpływa na podatki."
+
+msgid "Company checkout fields"
+msgstr "Pola firmowe w zamówieniu"
+
+msgid "Company details"
+msgstr "Dane firmowe"
+
+msgid "Company intent"
+msgstr "Zamówienie firmowe"
+
+msgid "Could not save the capture setting."
+msgstr "Nie udało się zapisać ustawienia pobierania danych."
+
+msgid "Digicyfr Company Checkout Fields PL"
+msgstr "Digicyfr: pola firmowe w zamówieniu"
+
+msgid "Digicyfr Company Checkout Fields PL requires active WooCommerce 8.9.0 or newer. Checkout capture is unavailable."
+msgstr "Wtyczka Digicyfr wymaga aktywnego WooCommerce 8.9.0 lub nowszego. Pobieranie danych przy zamówieniu jest niedostępne."
+
+msgid "Enable Digicyfr checkout capture"
+msgstr "Włącz pobieranie danych przez Digicyfr"
+
+msgid "Enter a Polish NIP with 10 digits and a valid check digit. Only spaces and hyphens may separate digits; PL and other VAT prefixes are not accepted."
+msgstr "Wpisz polski NIP z 10 cyframi i poprawną cyfrą kontrolną. Cyfry można oddzielać tylko spacjami lub łącznikami; prefiks PL i inne numery VAT nie są obsługiwane."
+
+msgid "I am ordering for a company"
+msgstr "Zamawiam jako firma"
+
+msgid "If another plugin already adds a NIP field, disable this capture to avoid duplicate shopper controls. Historical order values remain visible and subject to WooCommerce privacy handling."
+msgstr "Jeśli inna wtyczka dodaje już pole NIP, wyłącz pobieranie przez Digicyfr, aby uniknąć dwóch pól. Wcześniejsze dane zamówień pozostają widoczne i podlegają obsłudze prywatności WooCommerce."
+
+msgid "If enabled, checkout asks whether an order is for a company and optionally collects a Polish NIP. These values are saved on the order, shown to authorized staff and on normal WooCommerce order confirmations and emails, and retained under the store’s order retention policy. A NIP is checked locally for format and check digit only; no registry lookup or external request occurs. WooCommerce order privacy export and erasure include these values when configured. Disabling or uninstalling this plugin does not erase existing order values; the store controls its order records and privacy requests."
+msgstr "Po włączeniu kasa pyta, czy zamówienie jest firmowe, i opcjonalnie pobiera polski NIP. Dane są zapisywane w zamówieniu, pokazywane uprawnionym pracownikom oraz w zwykłych potwierdzeniach i wiadomościach WooCommerce; obowiązuje je polityka przechowywania zamówień sklepu. NIP jest lokalnie sprawdzany tylko pod kątem formatu i cyfry kontrolnej; nie ma zapytania do rejestru ani usługi zewnętrznej. Eksport i usuwanie danych osobowych zamówienia w WooCommerce obejmują te wartości, gdy są skonfigurowane. Wyłączenie lub usunięcie wtyczki nie kasuje istniejących danych zamówień; sklep zarządza zamówieniami i żądaniami dotyczącymi prywatności."
+
+msgid "Invalid capture setting."
+msgstr "Nieprawidłowe ustawienie pobierania danych."
+
+msgid "No"
+msgstr "Nie"
+
+msgid "Optional company intent and locally checked Polish NIP for WooCommerce checkout."
+msgstr "Opcjonalne oznaczenie zamówienia firmowego i lokalne sprawdzenie polskiego NIP w WooCommerce."
+
+msgid "Polish NIP"
+msgstr "Polski NIP"
+
+msgid "Polish NIP (optional)"
+msgstr "Polski NIP (opcjonalnie)"
+
+msgid "Save setting"
+msgstr "Zapisz ustawienie"
+
+msgid "Select company intent if you enter a Polish NIP."
+msgstr "Jeśli wpisujesz polski NIP, zaznacz, że zamawiasz jako firma."
+
+msgid "Yes"
+msgstr "Tak"
+
+msgid "You cannot manage company checkout capture."
+msgstr "Nie możesz zarządzać pobieraniem danych firmowych."
+

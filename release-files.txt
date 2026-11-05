@@ -1,0 +1,12 @@
+digicyfr-company-checkout-fields-pl.php
+includes/class-dccf-data.php
+includes/class-dccf-checkout.php
+includes/class-dccf-display.php
+includes/class-dccf-admin.php
+languages/digicyfr-company-checkout-fields-pl-pl_PL.po
+languages/digicyfr-company-checkout-fields-pl-pl_PL.mo
+README.md
+readme.txt
+CHANGELOG.md
+LICENSE
+uninstall.php

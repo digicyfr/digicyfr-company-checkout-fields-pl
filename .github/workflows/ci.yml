@@ -1,0 +1,31 @@
+name: Validate plugin
+
+on:
+  push:
+    branches:
+      - main
+      - 'release/**'
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install PHP CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y php8.3-cli
+      - name: Lint PHP
+        run: find . -type f -name '*.php' -not -path './dist/*' -print0 | xargs -0 -r -n 1 php -l
+      - name: Build and verify allowlisted ZIP
+        run: |
+          python3 tools/release.py build
+          python3 tools/release.py verify
+          cd dist && sha256sum -c ./*.zip.sha256
+      - name: Fresh WooCommerce Block and HPOS contract of exact ZIP
+        run: bash tests/run-wordpress-contract.sh dist/*.zip

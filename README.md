@@ -2,6 +2,18 @@
 
 Free GPL WooCommerce component for two optional order-specific fields: company intent and Polish NIP. It works with classic checkout and the Checkout Block's **Order information** inner block. It does not change WooCommerce's native company name, issue an invoice, check a tax registry, or change tax calculations.
 
+**Po polsku:** Dla polskich sklepów WooCommerce: dodaj opcjonalne oznaczenie zakupu firmowego i NIP do zamówienia w kasie klasycznej lub blokowej. Wtyczka nie wystawia faktur ani nie sprawdza statusu VAT.
+
+## Website guides and stable release
+
+- [Company Checkout Fields PL: English overview and installation](https://www.digicyfr.com/en/wordpress-plugins/digicyfr-company-checkout-fields-pl)
+- [Pola firmowe w kasie PL: opis i instalacja po polsku](https://www.digicyfr.com/pl/wordpress-plugins/digicyfr-company-checkout-fields-pl)
+- [Stable v0.1.0 release, ZIP and checksum](https://github.com/digicyfr/digicyfr-company-checkout-fields-pl/releases/tag/v0.1.0)
+
+<a href="https://www.digicyfr.com/pl/wordpress-plugins/digicyfr-company-checkout-fields-pl"><img src="https://www.digicyfr.com/images/wordpress-plugins/digicyfr-company-checkout-fields-pl.png" alt="WooCommerce Checkout Block receipt with example company details" width="520"></a>
+
+_Example screenshot from a disposable test site._
+
 ## Use
 
 Install the versioned ZIP while WooCommerce 8.9.0 or later is active. Tested WordPress, PHP, and WooCommerce versions are in `docs/QA-0.1.0.md`. Open **WooCommerce → Company checkout fields**. Capture starts enabled; a merchant with another NIP plugin can turn off Digicyfr capture. That removes only this plugin's checkout controls and preserves historical order values. Two active NIP capture plugins can otherwise show duplicate controls. There is no automatic migration of third-party NIP data.

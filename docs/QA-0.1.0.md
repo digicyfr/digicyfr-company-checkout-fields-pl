@@ -66,3 +66,9 @@ Screenshots: [Block company receipt](evidence/0.1.0/block-company-receipt.png), 
 
 - No manual screen-reader or live merchant test has been performed. NIP validation checks only local syntax and check digit; no registry or tax status was verified.
 - Compatibility is evidenced only for the pinned WooCommerce 8.9.0 and 11.2.2 releases, WordPress 7.1, and PHP 8.3.33 in this local matrix. Intervening or newer versions require their own tests.
+
+## Automated accessibility audit on the public ZIP — 2026-11-05
+
+The exact public ZIP and SHA sidecar above were verified again and installed on a fresh disposable WordPress 7.1 / PHP 8.3.33 / WooCommerce 11.2.2 site with synthetic products and noncharging BACS. Chromium 156.0.8078.4 and axe-core 4.10.3 ran WCAG 2/2.1/2.2 A/AA rule tags on the merchant setting, settled Block and Classic checkouts, and both visible wrong-checksum NIP error states. Every tested state had **zero axe violations**. Both checkout modes were also run with this plugin deactivated as WooCommerce baselines; both baselines had zero violations. At 390px the settings and both checkouts had document width 390px. Chromium's accessibility tree exposed a named company checkbox and NIP textbox in both modes; Space toggled the checkbox and Tab moved to NIP. The settings checkbox and Save button were also named and sequentially reachable by Tab. See [machine-readable audit evidence](evidence/0.1.0/axe-2026-11-05.json).
+
+Classic checkout had one inconclusive contrast check on WooCommerce's native order-notes textarea with the plugin both active and inactive. An early Block loading-skeleton snapshot briefly raised an axe ARIA finding on WooCommerce's skeleton markup; it disappeared after the cart finished loading. These are not plugin-owned defects. The automated check did not require a change to the `v0.1.0` ZIP, tag, or release branch. A human screen-reader pass and merchant-configured checkout, payment and email acceptance remain open.

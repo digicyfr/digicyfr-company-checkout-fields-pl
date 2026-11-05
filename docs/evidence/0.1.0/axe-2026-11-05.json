@@ -1,0 +1,258 @@
+{
+  "date_utc": "2026-11-05",
+  "artifact": "exact public GitHub v0.1.0 ZIP; downloaded SHA sidecar passed",
+  "stack": "WordPress 7.1 / PHP 8.3.33 / MariaDB 11.4.13; WooCommerce 11.2.2 for Woo plugins",
+  "browser": "Chromium 156.0.8078.4 via Playwright",
+  "axe_core": "4.10.3",
+  "axe_rules": "wcag2a,wcag2aa,wcag21a,wcag21aa,wcag22aa",
+  "scope": "automated checks only; no human screen-reader session",
+  "sha256": "33da10e89d0dc9d00a0c1a30236e1ccd45e91a8b57ba1a53facedc67c70e0379",
+  "settings": {
+    "full_page_violations": 0,
+    "plugin_region_violations": 0,
+    "width": {
+      "viewport": 390,
+      "document": 390
+    },
+    "keyboard_checkbox_to_save": true
+  },
+  "checkout": {
+    "block_active": {
+      "mode": "on",
+      "results": {
+        "violations": [],
+        "incomplete": [],
+        "passes": 28
+      },
+      "ax": [
+        {
+          "role": "textbox",
+          "name": "Polish NIP (optional)",
+          "ignored": false
+        },
+        {
+          "role": "checkbox",
+          "name": "I am ordering for a company (optional)",
+          "ignored": false
+        },
+        {
+          "role": "StaticText",
+          "name": "I am ordering for a company (optional)",
+          "ignored": false
+        },
+        {
+          "role": "StaticText",
+          "name": "Polish NIP (optional)",
+          "ignored": false
+        },
+        {
+          "role": "InlineTextBox",
+          "name": "I am ordering for a company (optional)",
+          "ignored": false
+        },
+        {
+          "role": "InlineTextBox",
+          "name": "Polish NIP (optional)",
+          "ignored": false
+        }
+      ],
+      "keyboard": {
+        "toggled": true,
+        "nipFocused": true
+      },
+      "width": {
+        "viewport": 390,
+        "document": 390
+      }
+    },
+    "block_plugin_off_baseline": {
+      "mode": "off",
+      "results": {
+        "violations": [],
+        "incomplete": [],
+        "passes": 28
+      },
+      "ax": [],
+      "keyboard": null,
+      "width": {
+        "viewport": 390,
+        "document": 390
+      }
+    },
+    "classic_active": {
+      "mode": "on",
+      "results": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "targets": [
+              [
+                "#order_comments"
+              ]
+            ]
+          }
+        ],
+        "passes": 31
+      },
+      "ax": [
+        {
+          "role": "StaticText",
+          "name": "Polish NIP ",
+          "ignored": false
+        },
+        {
+          "role": "textbox",
+          "name": "Polish NIP (optional)",
+          "ignored": false
+        },
+        {
+          "role": "checkbox",
+          "name": "I am ordering for a company (optional)",
+          "ignored": false
+        },
+        {
+          "role": "StaticText",
+          "name": " I am ordering for a company ",
+          "ignored": false
+        },
+        {
+          "role": "InlineTextBox",
+          "name": "Polish NIP ",
+          "ignored": false
+        },
+        {
+          "role": "InlineTextBox",
+          "name": " I am ordering for a company ",
+          "ignored": false
+        }
+      ],
+      "keyboard": {
+        "toggled": true,
+        "nipFocused": true
+      },
+      "width": {
+        "viewport": 390,
+        "document": 390
+      }
+    },
+    "classic_plugin_off_baseline": {
+      "mode": "off",
+      "results": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "targets": [
+              [
+                "#order_comments"
+              ]
+            ]
+          }
+        ],
+        "passes": 31
+      },
+      "ax": [],
+      "keyboard": null,
+      "width": {
+        "viewport": 390,
+        "document": 390
+      }
+    },
+    "block_bad_nip_error": {
+      "mode": "block",
+      "status": 400,
+      "axe": {
+        "violations": [],
+        "incomplete": [],
+        "passes": 30
+      },
+      "ax": [
+        {
+          "role": "StaticText",
+          "name": "Enter a Polish NIP with 10 digits and a valid check digit. Only spaces and hyphens may separate digits; PL and other VAT prefixes are not accepted.  ",
+          "ignored": false
+        },
+        {
+          "role": "textbox",
+          "name": "Polish NIP (optional)",
+          "ignored": false
+        },
+        {
+          "role": "StaticText",
+          "name": "Enter a Polish NIP with 10 digits and a valid check digit. Only spaces and hyphens may separate digits; PL and other VAT prefixes are not accepted.",
+          "ignored": false
+        },
+        {
+          "role": "StaticText",
+          "name": "Polish NIP (optional)",
+          "ignored": false
+        },
+        {
+          "role": "InlineTextBox",
+          "name": "Enter a Polish NIP with 10 digits and a valid check digit. Only spaces and ",
+          "ignored": false
+        },
+        {
+          "role": "InlineTextBox",
+          "name": "Polish NIP (optional)",
+          "ignored": false
+        }
+      ]
+    },
+    "classic_bad_nip_error": {
+      "mode": "classic",
+      "status": 200,
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "targets": [
+              [
+                "#order_comments"
+              ]
+            ]
+          }
+        ],
+        "passes": 31
+      },
+      "ax": [
+        {
+          "role": "generic",
+          "name": "Enter a Polish NIP with 10 digits and a valid check digit. Only spaces and hyphens may separate digits; PL and other VAT prefixes are not accepted.",
+          "ignored": false
+        },
+        {
+          "role": "StaticText",
+          "name": "Enter a Polish NIP with 10 digits and a valid check digit. Only spaces and hyphens may separate digits; PL and other VAT prefixes are not accepted.",
+          "ignored": false
+        },
+        {
+          "role": "StaticText",
+          "name": "Polish NIP ",
+          "ignored": false
+        },
+        {
+          "role": "textbox",
+          "name": "Polish NIP (optional)",
+          "ignored": false
+        },
+        {
+          "role": "InlineTextBox",
+          "name": "Enter a Polish NIP with 10 digits and a valid check digit. Only spaces and hyphens may separate digits; PL ",
+          "ignored": false
+        },
+        {
+          "role": "InlineTextBox",
+          "name": "Polish NIP ",
+          "ignored": false
+        }
+      ]
+    }
+  },
+  "baseline": {
+    "wp_dashboard_full_page_violations": 0
+  },
+  "incomplete_note": "Classic checkout has one inconclusive color-contrast check on WooCommerce native #order_comments with plugin on and off. Initial Block loading skeleton briefly produced WooCommerce aria-prohibited-attr findings; after cart loading settled, both active and plugin-off runs had zero violations."
+}

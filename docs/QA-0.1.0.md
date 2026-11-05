@@ -1,10 +1,10 @@
-# Local candidate QA — 0.1.0
+# Candidate QA — 0.1.0
 
 This record covers the self-hosted, GPL candidate ZIP only. It is not a WordPress.org submission, tax validation, invoice feature, or public release approval.
 
 ## Exact artifact
 
-- ZIP: `dist/digicyfr-company-checkout-fields-pl-0.1.0.zip`
+- ZIP: `dist/digicyfr-company-checkout-fields-pl-0.1.0.zip`, byte-identical to the public GitHub `v0.1.0` prerelease asset downloaded and verified with its `.sha256` sidecar on 2026-11-05.
 - SHA-256: `33da10e89d0dc9d00a0c1a30236e1ccd45e91a8b57ba1a53facedc67c70e0379`
 - Standalone `tools/release.py build` and `verify` passed: all 12 allowlisted files match source bytes; no development docs or tests are bundled. Compared with the prior `d21c0418` candidate, only bundled `README.md` and `readme.txt` changed; runtime files are byte-identical.
 - PHP lint passed for all plugin and test PHP files. WordPress Coding Standards (`phpcs --standard=WordPress`) passed for runtime PHP.
@@ -47,7 +47,20 @@ Plugin Check ran on the installed runtime-identical prior ZIP on WooCommerce 11.
 ## Current ZIP retest — 2026-11-05
 
 - Fresh self-contained `tests/run-wordpress-contract.sh` passed for SHA-256 `33da10e89d0dc9d00a0c1a30236e1ccd45e91a8b57ba1a53facedc67c70e0379`: pinned WooCommerce 11.2.2 ZIP checksum, WordPress 7.1/PHP 8.3.33, Checkout Block, HPOS authoritative with compatibility sync off. WooCommerce and plugin ZIP installation, activation, deactivation and reactivation passed; `tests/wp-contract.php` passed all registration, validation, CRUD, display, privacy and admin authorization checks. The site used synthetic data and was removed after testing.
-- The new package differs from the matrix-tested ZIP only in bundled `README.md` and `readme.txt`; PHP, languages and other runtime bytes are unchanged. The full browser matrix above was not repeated on the documentation-only rebuild.
+- The new package differs from the matrix-tested ZIP only in bundled `README.md` and `readme.txt`; PHP, languages and other runtime bytes are unchanged. The full eight-cell browser matrix above was not repeated on the documentation-only rebuild. Two cells were repeated on the exact public artifact below.
+
+## Post-tag browser check on the exact public ZIP — 2026-11-05
+
+The downloaded public release ZIP and sidecar verified at SHA-256 `33da10e89d0dc9d00a0c1a30236e1ccd45e91a8b57ba1a53facedc67c70e0379`. Two fresh disposable WordPress 7.1 / PHP 8.3.33 / MariaDB 11.4.13 stores each installed, activated, deactivated, and reactivated that ZIP beside pinned WooCommerce 11.2.2. Both used a synthetic PLN 1.00 virtual product and the noncharging BACS fixture. The Block store used HPOS authoritative with compatibility sync off; the Classic store used legacy order storage.
+
+| Checkout/storage | Guest and customer browser cases | Finalized order IDs | Rejected input | Stored data |
+| --- | --- | --- | --- | --- |
+| Block / HPOS | Personal and company accepted for each shopper | 13–16, plus keyboard order 17 | Wrong-checksum NIP and NIP without company intent returned HTTP 400 with visible field errors | Personal intent `0` and empty NIP; company intent `1`, normalized `0123456789`, native `billing_company` retained; one meta row per canonical key, no postmeta mirror |
+| Classic / legacy | Personal and company accepted for each shopper | 13–16 | The same two invalid cases displayed WooCommerce errors; the checkout AJAX response was HTTP 200 but no order was completed | The same canonical values and one meta row per key; native `billing_company` retained |
+
+The two modes and two shopper identities covered 16 scripted browser scenarios. The order snapshot contained only the successful on-hold orders (plus Block order 17 after the mobile check). Fresh guest and signed-in customer company receipts showed one intent label and one NIP in both modes, with capture enabled and disabled. The administrator order page showed one read-only Company details section and one NIP in each mode. On the Block store, a 390px keyboard-only company checkout toggled intent with Space, reached NIP and Place Order with Tab, submitted with Enter, and had no document overflow (390px document). WooCommerce's customer on-hold email class was triggered with a synthetic company order; captured HTML and rendered plain-text content each contained one intent label and one NIP in both modes. This checks the email template path; automatic email delivery after checkout was not established by the disposable fixture.
+
+Screenshots: [Block company receipt](evidence/0.1.0/block-company-receipt.png), [bad checksum](evidence/0.1.0/block-bad-checksum.png), [NIP without intent](evidence/0.1.0/block-nip-without-intent.png), [390px keyboard receipt](evidence/0.1.0/block-390px-keyboard-receipt.png), [admin order](evidence/0.1.0/block-admin-order.png), [historic receipt with capture off](evidence/0.1.0/block-historic-receipt-capture-off.png); [Classic company receipt](evidence/0.1.0/classic-company-receipt.png), [bad checksum](evidence/0.1.0/classic-bad-checksum.png), [admin order](evidence/0.1.0/classic-admin-order.png), and [historic receipt with capture off](evidence/0.1.0/classic-historic-receipt-capture-off.png). All names, addresses, emails, NIP, and orders were synthetic; both disposable stores were removed.
 
 ## Limits
 
